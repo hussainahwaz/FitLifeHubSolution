@@ -13,20 +13,21 @@
         }
 
         :root {
-            --primary: #FF6B35;
-            --primary-dark: #E85A2A;
-            --secondary: #00D9FF;
-            --dark: #0A0E27;
-            --dark-light: #1A1F3A;
-            --text: #E8E9F3;
-            --text-dim: #A0A3BD;
-            --accent: #FFD23F;
-            --success: #00F5A0;
+            /* Brand Colors */
+            --primary: #F49E4C;
+            --primary-dark: #AB3428;
+            --secondary: #3B8EA5;
+            --dark: #2D728F;
+            --dark-light: #3B8EA5;
+            --text: #1a2332;
+            --text-dim: #6c757d;
+            --accent: #F5EE9E;
+            --success: #3B8EA5;
         }
 
         body {
             font-family: 'Outfit', sans-serif;
-            background: var(--dark);
+            background: linear-gradient(135deg, #e8f4f8 0%, #fff 50%, #fef5ec 100%);
             color: var(--text);
             overflow-x: hidden;
             line-height: 1.6;
@@ -37,10 +38,11 @@
             position: fixed;
             top: 0;
             width: 100%;
-            background: rgba(10, 14, 39, 0.95);
+            background: rgba(255, 255, 255, 0.98);
             backdrop-filter: blur(20px);
             z-index: 1000;
-            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+            border-bottom: 2px solid var(--secondary);
+            box-shadow: 0 2px 12px rgba(45, 114, 143, 0.1);
         }
 
         .nav-container {
@@ -351,7 +353,7 @@
         /* Categories Section */
         .categories-section {
             padding: 8rem 2rem;
-            background: var(--dark-light);
+            background: white;
             position: relative;
         }
 
@@ -392,10 +394,10 @@
         }
 
         .category-card {
-            background: var(--dark);
+            background: #f8f9fa;
             border-radius: 25px;
             padding: 2.5rem;
-            border: 2px solid rgba(255, 255, 255, 0.05);
+            border: 2px solid rgba(59, 142, 165, 0.1);
             transition: all 0.4s ease;
             cursor: pointer;
             position: relative;
@@ -409,7 +411,7 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            background: linear-gradient(135deg, var(--secondary), var(--primary));
             opacity: 0;
             transition: opacity 0.4s ease;
         }
@@ -417,7 +419,7 @@
         .category-card:hover {
             transform: translateY(-10px);
             border-color: var(--primary);
-            box-shadow: 0 20px 50px rgba(255, 107, 53, 0.3);
+            box-shadow: 0 20px 50px rgba(244, 158, 76, 0.2);
         }
 
         .category-card:hover::before {
@@ -458,7 +460,7 @@
         /* Features Section */
         .features-section {
             padding: 8rem 2rem;
-            background: var(--dark);
+            background: linear-gradient(135deg, #e8f4f8 0%, #fff 100%);
         }
 
         .features-grid {
@@ -501,7 +503,7 @@
         /* CTA Section */
         .cta-section {
             padding: 8rem 2rem;
-            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            background: linear-gradient(135deg, var(--secondary), var(--primary));
             position: relative;
             overflow: hidden;
         }
@@ -588,9 +590,10 @@
 
         /* Footer */
         .footer {
-            background: var(--dark-light);
+            background: var(--dark);
             padding: 4rem 2rem 2rem;
-            border-top: 1px solid rgba(255, 255, 255, 0.05);
+            border-top: 2px solid var(--secondary);
+            color: white;
         }
 
         .footer-container {
