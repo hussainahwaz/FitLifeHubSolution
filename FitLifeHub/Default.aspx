@@ -5,133 +5,18 @@
     <title>FitLifeHub - Transform Your Fitness Journey</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700;800&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet" />
-    <!-- Brand Colors CSS - Contains all color definitions and reusable styles -->
+    <!-- Enhanced Brand Colors CSS - Contains all shared styles -->
     <link href="styles/brand-colors.css" rel="stylesheet" type="text/css" />
     <style>
-        /* Only page-specific styles here - colors come from brand-colors.css */
+        /* Only Default.aspx specific styles here */
         
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
+        /* Remove all underlines from links and buttons */
+        a {
+            text-decoration: none;
         }
-
+        
         body {
             background: linear-gradient(135deg, #e8f4f8 0%, #fff 50%, #fef5ec 100%);
-        }
-
-        /* Navigation Bar - Fixed at top */
-        .navbar {
-            position: fixed;
-            top: 0;
-            width: 100%;
-            background: white;
-            border-bottom: 2px solid var(--primary-blue);
-            box-shadow: 0 2px 12px rgba(45, 114, 143, 0.1);
-            z-index: 1000;
-        }
-
-        .navbar-container {
-            max-width: 1400px;
-            margin: 0 auto;
-            padding: 1rem 2rem;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-
-        .navbar-brand {
-            display: flex;
-            align-items: center;
-            gap: 0.8rem;
-            text-decoration: none;
-            font-weight: 800;
-            font-size: 1.5rem;
-            color: var(--primary-dark-blue);
-        }
-
-        .logo-icon {
-            width: 45px;
-            height: 45px;
-            background: linear-gradient(135deg, var(--primary-blue), var(--primary-orange));
-            border-radius: 10px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: white;
-            font-weight: 800;
-            font-size: 1.1rem;
-        }
-
-        .navbar-menu {
-            display: flex;
-            align-items: center;
-            gap: 2.5rem;
-            list-style: none;
-        }
-
-        .navbar-menu a {
-            text-decoration: none;
-            color: var(--text-gray);
-            font-weight: 600;
-            transition: color 0.3s ease;
-            position: relative;
-        }
-
-        .navbar-menu a:hover {
-            color: var(--primary-blue);
-        }
-
-        .navbar-menu a::after {
-            content: '';
-            position: absolute;
-            bottom: -5px;
-            left: 0;
-            width: 0;
-            height: 2px;
-            background: var(--primary-orange);
-            transition: width 0.3s ease;
-        }
-
-        .navbar-menu a:hover::after {
-            width: 100%;
-        }
-
-        .navbar-actions {
-            display: flex;
-            gap: 1rem;
-        }
-
-        .btn-nav-secondary {
-            padding: 0.6rem 1.5rem;
-            background: transparent;
-            color: var(--primary-blue);
-            border: 2px solid var(--primary-blue);
-            border-radius: 8px;
-            font-weight: 600;
-            text-decoration: none;
-            transition: all 0.3s ease;
-        }
-
-        .btn-nav-secondary:hover {
-            background: var(--primary-blue);
-            color: white;
-        }
-
-        .btn-nav-primary {
-            padding: 0.6rem 1.5rem;
-            background: var(--primary-orange);
-            color: white;
-            border: none;
-            border-radius: 8px;
-            font-weight: 600;
-            text-decoration: none;
-            transition: all 0.3s ease;
-        }
-
-        .btn-nav-primary:hover {
-            background: var(--primary-orange-hover);
-            transform: translateY(-2px);
         }
 
         /* Hero Section */
@@ -316,17 +201,11 @@
             gap: 2rem;
         }
 
-        /* Enhanced Category Cards with Hover Effect */
+        /* Category Cards - Enhanced hover with highlight */
         .category-card {
-            background: white;
-            border-radius: 12px;
-            padding: 2rem;
-            border: 1px solid var(--border-light);
-            box-shadow: 0 2px 8px rgba(45, 114, 143, 0.08);
-            transition: all 0.3s ease;
-            cursor: pointer;
             position: relative;
             overflow: hidden;
+            cursor: pointer;
         }
 
         .category-card::before {
@@ -339,42 +218,27 @@
             background: linear-gradient(135deg, rgba(59, 142, 165, 0.05) 0%, rgba(244, 158, 76, 0.05) 100%);
             opacity: 0;
             transition: opacity 0.3s ease;
-        }
-
-        .category-card:hover {
-            box-shadow: 0 12px 28px rgba(45, 114, 143, 0.2);
-            transform: translateY(-8px);
-            border-color: var(--primary-blue);
+            z-index: 0;
         }
 
         .category-card:hover::before {
             opacity: 1;
         }
 
+        .category-card > * {
+            position: relative;
+            z-index: 1;
+        }
+
         .category-icon {
             font-size: 3rem;
             margin-bottom: 1.5rem;
-            position: relative;
-            z-index: 1;
         }
 
         .category-name {
             font-size: 1.5rem;
             font-weight: 700;
             margin-bottom: 0.8rem;
-            position: relative;
-            z-index: 1;
-        }
-
-        .category-card p {
-            position: relative;
-            z-index: 1;
-            margin-bottom: 1rem;
-        }
-
-        .category-card .badge {
-            position: relative;
-            z-index: 1;
         }
 
         /* Features Section */
@@ -446,6 +310,12 @@
             color: white;
         }
 
+        .cta-text {
+            font-size: 1.3rem;
+            color: rgba(255, 255, 255, 0.9);
+            margin-bottom: 2.5rem;
+        }
+
         .cta-buttons {
             display: flex;
             gap: 1rem;
@@ -459,7 +329,7 @@
             border-radius: 10px;
             font-weight: 700;
             font-size: 1.1rem;
-            text-decoration: none;
+            text-decoration: none !important;
             transition: all 0.3s ease;
             display: inline-block;
         }
@@ -467,6 +337,7 @@
         .btn-white:hover {
             transform: translateY(-3px);
             box-shadow: 0 10px 30px rgba(255, 255, 255, 0.3);
+            text-decoration: none !important;
         }
 
         .btn-outline-white {
@@ -477,7 +348,7 @@
             border-radius: 10px;
             font-weight: 700;
             font-size: 1.1rem;
-            text-decoration: none;
+            text-decoration: none !important;
             transition: all 0.3s ease;
             display: inline-block;
         }
@@ -486,9 +357,10 @@
             background: white;
             color: var(--primary-blue);
             transform: translateY(-3px);
+            text-decoration: none !important;
         }
 
-        /* Footer - NOW WITH PROPER BACKGROUND COLOR */
+        /* Footer */
         .footer {
             background: var(--primary-dark-blue);
             color: white;
@@ -508,24 +380,16 @@
             display: flex;
             align-items: center;
             gap: 0.8rem;
-            text-decoration: none;
+            text-decoration: none !important;
             font-weight: 800;
             font-size: 1.5rem;
             color: white;
             margin-bottom: 1.5rem;
         }
 
-        .footer-brand .logo-icon {
-            width: 45px;
-            height: 45px;
-            background: linear-gradient(135deg, var(--primary-blue), var(--primary-orange));
-            border-radius: 10px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: white;
-            font-weight: 800;
-            font-size: 1.1rem;
+        .footer-brand-description {
+            color: rgba(255, 255, 255, 0.7);
+            line-height: 1.7;
         }
 
         .footer-section h4 {
@@ -545,12 +409,13 @@
 
         .footer-links a {
             color: rgba(255, 255, 255, 0.7);
-            text-decoration: none;
+            text-decoration: none !important;
             transition: color 0.3s ease;
         }
 
         .footer-links a:hover {
             color: var(--accent-yellow);
+            text-decoration: none !important;
         }
 
         .footer-bottom {
@@ -564,10 +429,6 @@
 
         /* Responsive Design */
         @media (max-width: 768px) {
-            .navbar-menu {
-                display: none;
-            }
-
             .hero-container {
                 grid-template-columns: 1fr;
             }
@@ -583,13 +444,17 @@
             .footer-container {
                 grid-template-columns: 1fr;
             }
+
+            .cta-buttons {
+                flex-direction: column;
+            }
         }
     </style>
 </head>
 <body>
     <form id="form1" runat="server">
         
-        <!-- Navigation Bar - NOW INCLUDED -->
+        <!-- Navigation Bar - Using classes from brand-colors.css -->
         <nav class="navbar">
             <div class="navbar-container">
                 <a href="Default.aspx" class="navbar-brand">
@@ -597,15 +462,15 @@
                     <span>FitLifeHub</span>
                 </a>
                 <ul class="navbar-menu">
-                    <li><a href="Default.aspx">Home</a></li>
+                    <li><a href="Default.aspx" class="active">Home</a></li>
                     <li><a href="WorkoutCatalog.aspx">Workouts</a></li>
                     <li><a href="FitnessArticles.aspx">Articles</a></li>
                     <li><a href="AboutUs.aspx">About</a></li>
                     <li><a href="ContactUs.aspx">Contact</a></li>
                 </ul>
                 <div class="navbar-actions">
-                    <a href="Login.aspx" class="btn-nav-secondary">Login</a>
-                    <a href="Register.aspx" class="btn-nav-primary">Sign Up</a>
+                    <a href="Login.aspx" class="btn-secondary btn-sm">Login</a>
+                    <a href="Register.aspx" class="btn-primary btn-sm">Sign Up</a>
                 </div>
             </div>
         </nav>
@@ -624,8 +489,8 @@
                         expert guidance, and powerful progress tracking. Start your transformation today.
                     </p>
                     <div class="hero-buttons">
-                        <a href="Register.aspx" class="btn-primary">Start Free Trial</a>
-                        <a href="WorkoutCatalog.aspx" class="btn-secondary">Browse Workouts</a>
+                        <a href="Register.aspx" class="btn-primary btn-lg">Start Free Trial</a>
+                        <a href="WorkoutCatalog.aspx" class="btn-secondary btn-lg">Browse Workouts</a>
                     </div>
                     <div class="hero-stats">
                         <div class="stat-item">
@@ -660,7 +525,7 @@
             </div>
         </section>
 
-        <!-- Categories Section - WITH IMPROVED HOVER EFFECTS -->
+        <!-- Categories Section - Using card class from brand-colors.css -->
         <section class="categories-section">
             <div class="section-header">
                 <div class="section-label text-primary">WORKOUT CATEGORIES</div>
@@ -670,40 +535,40 @@
                 </p>
             </div>
             <div class="categories-grid">
-                <div class="category-card" onclick="location.href='WorkoutCatalog.aspx?category=strength'">
+                <div class="card category-card" onclick="location.href='WorkoutCatalog.aspx?category=strength'">
                     <div class="category-icon">💪</div>
                     <h3 class="category-name">Strength Training</h3>
-                    <p class="text-gray">Build muscle and increase power with progressive resistance workouts.</p>
+                    <p class="text-gray mb-2">Build muscle and increase power with progressive resistance workouts.</p>
                     <span class="badge badge-orange">120+ Workouts</span>
                 </div>
-                <div class="category-card" onclick="location.href='WorkoutCatalog.aspx?category=cardio'">
+                <div class="card category-card" onclick="location.href='WorkoutCatalog.aspx?category=cardio'">
                     <div class="category-icon">🏃</div>
                     <h3 class="category-name">Cardio</h3>
-                    <p class="text-gray">Boost endurance and burn calories with high-energy cardio sessions.</p>
+                    <p class="text-gray mb-2">Boost endurance and burn calories with high-energy cardio sessions.</p>
                     <span class="badge badge-orange">95+ Workouts</span>
                 </div>
-                <div class="category-card" onclick="location.href='WorkoutCatalog.aspx?category=flexibility'">
+                <div class="card category-card" onclick="location.href='WorkoutCatalog.aspx?category=flexibility'">
                     <div class="category-icon">🧘</div>
                     <h3 class="category-name">Flexibility & Yoga</h3>
-                    <p class="text-gray">Improve mobility and find balance with guided stretching and yoga.</p>
+                    <p class="text-gray mb-2">Improve mobility and find balance with guided stretching and yoga.</p>
                     <span class="badge badge-orange">80+ Workouts</span>
                 </div>
-                <div class="category-card" onclick="location.href='WorkoutCatalog.aspx?category=hiit'">
+                <div class="card category-card" onclick="location.href='WorkoutCatalog.aspx?category=hiit'">
                     <div class="category-icon">⚡</div>
                     <h3 class="category-name">HIIT</h3>
-                    <p class="text-gray">Maximize results with intense interval training for fat burning.</p>
+                    <p class="text-gray mb-2">Maximize results with intense interval training for fat burning.</p>
                     <span class="badge badge-orange">75+ Workouts</span>
                 </div>
-                <div class="category-card" onclick="location.href='WorkoutCatalog.aspx?category=core'">
+                <div class="card category-card" onclick="location.href='WorkoutCatalog.aspx?category=core'">
                     <div class="category-icon">🎯</div>
                     <h3 class="category-name">Core Training</h3>
-                    <p class="text-gray">Strengthen your core for better stability and athletic performance.</p>
+                    <p class="text-gray mb-2">Strengthen your core for better stability and athletic performance.</p>
                     <span class="badge badge-orange">65+ Workouts</span>
                 </div>
-                <div class="category-card" onclick="location.href='WorkoutCatalog.aspx?category=recovery'">
+                <div class="card category-card" onclick="location.href='WorkoutCatalog.aspx?category=recovery'">
                     <div class="category-icon">🌟</div>
                     <h3 class="category-name">Recovery</h3>
-                    <p class="text-gray">Restore and rejuvenate with foam rolling and active recovery.</p>
+                    <p class="text-gray mb-2">Restore and rejuvenate with foam rolling and active recovery.</p>
                     <span class="badge badge-orange">45+ Workouts</span>
                 </div>
             </div>
@@ -752,11 +617,11 @@
             </div>
         </section>
 
-        <!-- CTA Section -->
+        <!-- CTA Section - Using bg-gradient-blue from brand-colors.css -->
         <section class="cta-section bg-gradient-blue">
             <div class="cta-container">
                 <h2 class="cta-title">Ready to Transform Your Fitness?</h2>
-                <p style="font-size: 1.3rem; color: rgba(255, 255, 255, 0.9); margin-bottom: 2.5rem;">
+                <p class="cta-text">
                     Join FitLifeHub today and get instant access to 500+ workouts, expert trainers, and powerful tracking tools. 
                     Your fitness journey starts now.
                 </p>
@@ -767,7 +632,7 @@
             </div>
         </section>
 
-        <!-- Footer - NOW WITH DARK BLUE BACKGROUND -->
+        <!-- Footer -->
         <footer class="footer">
             <div class="footer-container">
                 <div class="footer-brand">
@@ -775,7 +640,7 @@
                         <div class="logo-icon">FL</div>
                         <span>FitLifeHub</span>
                     </a>
-                    <p style="color: rgba(255, 255, 255, 0.7); line-height: 1.7;">
+                    <p class="footer-brand-description">
                         Your complete digital fitness platform. Transform your body, elevate your life, and achieve your goals with expert guidance.
                     </p>
                 </div>
