@@ -180,6 +180,7 @@
     <Content Include="Scripts\WebForms\WebParts.js" />
     <Content Include="Scripts\WebForms\WebUIValidation.js" />
     <Content Include="Site.Master" />
+    <Content Include="Styles\brand-colors.css" />
     <Content Include="Trainer\ManageWorkouts.aspx" />
     <Content Include="User\Dashboard.aspx" />
     <Content Include="User\TrackProgress.aspx" />
