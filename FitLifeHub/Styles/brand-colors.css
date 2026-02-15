@@ -232,11 +232,13 @@ h1, h2, h3, h4, h5, h6 {
 .btn-sm {
     padding: 0.5rem 1rem;
     font-size: 0.875rem;
+    border-radius: 8px;
 }
 
 .btn-lg {
     padding: 1rem 2.5rem;
     font-size: 1.1rem;
+    border-radius: 8px;
 }
 
 /* Button Block (Full Width) */
